@@ -26,5 +26,12 @@ export class FirestoreService {
     return this.database.createId();
   }
 
+  //get collection ayuda a traer toda la colecion y no solo documentos 
+  getCollection<tipo>(path: string){
+    const collection = this.database.collection<tipo>(path); // se define un tipo para set-mascota
+    return collection.valueChanges(); //value changues nos ayuda a estar penientes de los cambios realizados en
+    //la bd en tiempo real
+  }
+
 }
 

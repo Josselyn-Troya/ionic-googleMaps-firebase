@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar color="warning">
+    <!-- <ion-button (click)="loadMap(); guardarUbicacion()" shape="round" color="dark">
+      <ion-icon slot="start" name="locate"></ion-icon>
+      Mi Ubicación
+    </ion-button> -->
+    <ion-title slot="start">Historial</ion-title>
+    <ion-button routerLink="/home" shape="round" color="dark">
+      <ion-icon slot="end" name="locate-outline"></ion-icon>
+      Google Map
+    </ion-button>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+<ion-card>
+            <ion-row>
+                <ion-col>
+                    <ion-card>
+                        <ion-item *ngFor="let ubicacion of ubicaciones" >
+                          <ion-icon slot="start" name="location-outline" color="danger"></ion-icon>
+                            Latitud: {{ubicacion.latitud}}
+                            <br>
+                            Logitud: {{ubicacion.longitud}}
+                            <br>
+                            Dirección: {{ubicacion.direccion}}
+                        </ion-item>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+</ion-content>
