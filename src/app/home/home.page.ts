@@ -1,7 +1,9 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input } from '@angular/core';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { Ubicacion } from '../modelsBD';
+import { FirestoreService } from '../services/firestore.service';
 
 declare var google;
 
@@ -12,6 +14,8 @@ declare var google;
 })
 export class HomePage {
 
+  visible = false;
+
   @ViewChild('map', { static: false }) mapElement: ElementRef;
   map: any;
   address: string;
@@ -19,9 +23,17 @@ export class HomePage {
   latitude: number;
   longitude: number;
 
+  ubicacion : Ubicacion = {
+    id: this.firestoreService.getId(),
+    latitud: '',
+    longitud: '',
+    direccion: '',
+    fecha: new Date()
+}
   constructor(
     private geolocation: Geolocation,
-    private nativeGeocoder: NativeGeocoder) {
+    private nativeGeocoder: NativeGeocoder,
+    public firestoreService:FirestoreService) {
   }
 
 
@@ -29,6 +41,23 @@ export class HomePage {
     this.loadMap();
   }
 
+  guardarUbicacion(){
+    this.visible = true;
+    const id = this.ubicacion.id;
+    this.ubicacion.latitud = String(this.latitude);
+    this.ubicacion.longitud = String(this.longitude);
+    this.ubicacion.direccion = '';
+    const path = '/UbicacionesGps';
+    console.log('guardarUbicacion() => ', this.ubicacion);
+    this.firestoreService.createDoc(this.ubicacion, path, id).then(res => {
+      /* this.loading.dismiss();
+      this.presentToast('Guardado con exito', 2000);
+      this.limpiarCampos(); */
+    }).catch(error => {
+      console.log('No se pudo Actulizar el cliente un error ->', error);
+      /* this.presentToast('Error al guardar!!', 2000); */
+    });
+  }
   loadMap() {
     this.geolocation.getCurrentPosition().then((resp) => {
 

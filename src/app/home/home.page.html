@@ -1,16 +1,16 @@
 <ion-header [translucent]="true">
 
   <ion-toolbar color="warning">
-    <ion-button (click)="loadMap()" shape="round" color="dark">
+    <ion-button (click)="loadMap(); guardarUbicacion()" shape="round" color="dark">
       <ion-icon slot="start" name="locate"></ion-icon>
-      Where I Am
+      Ver mi Ubicación
     </ion-button>
     <ion-title slot="end">Google Map</ion-title>
   </ion-toolbar>
 
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="visible">
 <ion-card>
   <div class="map-wrapper">
     <div id="map_center">
