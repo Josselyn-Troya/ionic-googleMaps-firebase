@@ -28,6 +28,8 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
  ## Aplicar estilos al mapa
  ###  [home.page.scss](https://github.com/Josselyn-Troya/ionic-googleMaps-firebase/blob/main/src/app/home/home.page.scss)
  
+ # [Video](https://www.youtube.com/watch?v=S0IUZe9gzg4)  
+ 
  
 
  
