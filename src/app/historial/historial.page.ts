@@ -22,7 +22,7 @@ export class HistorialPage implements OnInit {
     //debemos mandar un tipo '<>' que en este caso es producto q se define
     this.firestoreService.getCollection<Ubicacion>(this.path).subscribe(res => {
       this.ubicaciones = res;
-      console.log('Estos son las MAscotas En LA BD', res);
+      console.log('Estos son las Ubicabiones', res);
     });
   }
 }

@@ -1,14 +1,13 @@
 <ion-header [translucent]="true">
 
-  <ion-toolbar color="warning">
+  <ion-toolbar class ="titulo" color="primary">
     <!-- <ion-button (click)="loadMap(); guardarUbicacion()" shape="round" color="dark">
       <ion-icon slot="start" name="locate"></ion-icon>
       Mi Ubicación
     </ion-button> -->
-    <ion-title slot="start">Google Map</ion-title>
-    <ion-button routerLink="/historial" shape="round" color="dark">
+    <ion-title slot="start" >Google Map</ion-title>
+    <ion-button (click)="vaciarCampos()" routerLink="/historial" shape="round" color="dark">
       <ion-icon slot="end" name="timer-outline"></ion-icon>
-      
       Historial
     </ion-button>
   </ion-toolbar>
@@ -19,7 +18,7 @@
   <ion-card>
     <div class="map-wrapper">
       <div id="map_center">
-        <img src="assets/icon/location-marker.png" />
+        <img src="assets/icon/loca.png" />
       </div>
       <div #map id="map"></div>
     </div>

@@ -41,21 +41,22 @@ export class HomePage {
     this.loadMap();
   }
 
+  vaciarCampos(){
+    this.visible = false;
+  }
   guardarUbicacion(){
     this.visible = true;
     const id = this.ubicacion.id;
     this.ubicacion.latitud = String(this.latitude);
     this.ubicacion.longitud = String(this.longitude);
-    this.ubicacion.direccion = '';
+    //this.ubicacion.direccion = '';
     const path = '/UbicacionesGps';
     console.log('guardarUbicacion() => ', this.ubicacion);
     this.firestoreService.createDoc(this.ubicacion, path, id).then(res => {
-      /* this.loading.dismiss();
-      this.presentToast('Guardado con exito', 2000);
-      this.limpiarCampos(); */
+      console.log('guardarUbicacion()  ==> ', res);
     }).catch(error => {
-      console.log('No se pudo Actulizar el cliente un error ->', error);
-      /* this.presentToast('Error al guardar!!', 2000); */
+      console.log('No se pudo Actulizar un error ->', error);
+      
     });
   }
   loadMap() {
@@ -109,6 +110,7 @@ export class HomePage {
           this.address += value + ", ";
         }
         this.address = this.address.slice(0, -2);
+        this.ubicacion.direccion = this.address;
       })
       .catch((error: any) => {
         this.address = "Address Not Available!";

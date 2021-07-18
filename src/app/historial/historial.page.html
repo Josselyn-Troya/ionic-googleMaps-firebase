@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
 
-  <ion-toolbar color="warning">
+  <ion-toolbar color="success">
     <!-- <ion-button (click)="loadMap(); guardarUbicacion()" shape="round" color="dark">
       <ion-icon slot="start" name="locate"></ion-icon>
       Mi Ubicación
@@ -21,11 +21,13 @@
                     <ion-card>
                         <ion-item *ngFor="let ubicacion of ubicaciones" >
                           <ion-icon slot="start" name="location-outline" color="danger"></ion-icon>
-                            Latitud: {{ubicacion.latitud}}
-                            <br>
-                            Logitud: {{ubicacion.longitud}}
-                            <br>
-                            Dirección: {{ubicacion.direccion}}
+                          Fecha : {{ubicacion.fecha?.toMillis() | date:'short'}}
+                          
+                          Latitud: {{ubicacion.latitud}}
+                          <br>
+                          Logitud: {{ubicacion.longitud}}
+                          <br>
+                          Dirección: {{ubicacion.direccion}}
                         </ion-item>
                     </ion-card>
                 </ion-col>
