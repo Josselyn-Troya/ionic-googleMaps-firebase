@@ -22,7 +22,7 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
  ## Agregar Google Map en la página de inicio
  ### [home.page.html](https://github.com/Josselyn-Troya/ionic-googleMaps-firebase/blob/main/src/app/home/home.page.html)
  
- ## Modificar el archivo del componente de inicio para cargar mapas de Google.
+ ## Modificar el archivo del componente de inicio para cargar el mapa de Google.
  ### [home.page.ts](https://github.com/Josselyn-Troya/ionic-googleMaps-firebase/blob/main/src/app/home/home.page.ts)
  
  ## Aplicar estilos al mapa
