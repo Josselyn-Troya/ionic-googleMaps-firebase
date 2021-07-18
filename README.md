@@ -30,6 +30,14 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
  ## Aplicar estilos al mapa
  ###  [home.page.scss](https://github.com/Josselyn-Troya/ionic-googleMaps-firebase/blob/main/src/app/home/home.page.scss)
  
+ ## [Intefaces con elementos para firebase](https://github.com/Josselyn-Troya/ionic-googleMaps-firebase/blob/main/src/app/modelsBD.ts)  
+ 
+ ## [Servicios Para Reistro y lectura en Firestore]
+ ### [/services](https://github.com/Josselyn-Troya/ionic-googleMaps-firebase/tree/main/src/app/services)
+ 
+ ## [Lectura de localizaciones para el historial]
+### [historial.page.ts](https://github.com/Josselyn-Troya/ionic-googleMaps-firebase/blob/main/src/app/historial/historial.page.ts) 
+### [historial.page.html](https://github.com/Josselyn-Troya/ionic-googleMaps-firebase/blob/main/src/app/historial/historial.page.html)
 
  
  
